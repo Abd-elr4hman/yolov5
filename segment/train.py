@@ -535,7 +535,8 @@ def main(opt, callbacks=Callbacks()):
         if opt.name == 'cfg':
             opt.name = Path(opt.cfg).stem  # use model.yaml as name
         #opt.save_dir = str(increment_path(Path(opt.project) / opt.name, exist_ok=opt.exist_ok))
-        opt.save_dir= "../" + str(Path(opt.project)) +"/" + opt.name
+        opt.save_dir= "/opt/ml/output/" + str(Path(opt.project)) +"/" + opt.name
+        
     # DDP mode
     device = select_device(opt.device, batch_size=opt.batch_size)
     if LOCAL_RANK != -1:
